@@ -1,0 +1,35 @@
+#N canvas 2 52 456 351 10;
+#X obj 104 -4 tedium_input 4;
+#X obj 161 21 tedium_input 17;
+#X text 346 45 <- CV gate 3 in;
+#X text 401 72 <- CV gate 4 in;
+#X text 280 24 <- CV gate 2 in;
+#X text 220 -4 <- CV gate 1 in;
+#X obj 223 44 tedium_input 14;
+#X obj 280 69 tedium_input 27;
+#X obj 99 187 outlet;
+#X obj 151 187 outlet;
+#X obj 104 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 161 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 223 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 280 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 202 186 outlet;
+#X obj 254 186 outlet;
+#X text 158 136 G2;
+#X text 100 136 G1;
+#X text 219 137 G3;
+#X text 277 137 G4;
+#X text 133 108 Terminal Tedium Gates;
+#X connect 0 0 10 0;
+#X connect 1 0 11 0;
+#X connect 6 0 12 0;
+#X connect 7 0 13 0;
+#X connect 10 0 8 0;
+#X connect 11 0 9 0;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X coords 0 -1 1 1 200 80 2 100 100;
