@@ -1,0 +1,98 @@
+#N canvas 220 366 1197 411 10;
+#X obj -183 41 tedium_input 23;
+#X text -62 42 <- button 1 in;
+#X text -62 92 <- button 2 in;
+#X text -61 142 <- button 3 in;
+#X obj -183 180 f;
+#X obj -144 179 + 1;
+#X obj -183 208 % 2;
+#X floatatom -183 238 5 0 0 0 - - -, f 5;
+#X obj -182 91 tedium_input 25;
+#X obj -183 142 tedium_input 24;
+#X text 129 95 -- OR --;
+#X text -20 -22 --------------------------Buttons--------------------
+;
+#X text -241 6 tedium_input will produce a bang when a button is pressed
+;
+#X text 201 3 tedium_switch will produce button push status and length
+(in ms) of press.;
+#X obj 243 37 tedium_switch 23;
+#X obj 241 90 tedium_switch 25;
+#X obj 243 139 tedium_switch 24;
+#X text 368 33 <- button 1 in;
+#X text 372 89 <- button 2 in;
+#X text 373 137 <- button 3 in;
+#X floatatom 715 442 5 0 0 2 B3_Dur - -, f 5;
+#X text 389 180 <- button status: 1 = pushed \, 0 = released;
+#X text 289 222 <- time (in milliseconds) the button is held down;
+#X text -193 282 <- this bit of code can be used to translate the buton
+or CV gate inputs (bangs) into a toggle. <- 0 is off \, 1 is on. one
+press turns it to 1 \, another press turns it to 0 \, another press
+back to 1 \, etc.;
+#X floatatom 582 443 5 0 0 2 B2_Dur - -, f 5;
+#X obj -91 180 f;
+#X obj -52 179 + 1;
+#X obj -91 208 % 2;
+#X floatatom -91 238 5 0 0 0 - - -, f 5;
+#X obj 17 180 f;
+#X obj 56 179 + 1;
+#X obj 17 208 % 2;
+#X floatatom 17 238 5 0 0 0 - - -, f 5;
+#X obj 365 481 outlet;
+#X obj 421 481 outlet;
+#X obj 474 481 outlet;
+#X obj 535 481 outlet;
+#X obj 590 481 outlet;
+#X obj 644 481 outlet;
+#X obj 705 481 outlet;
+#X obj 761 481 outlet;
+#X obj 814 481 outlet;
+#X floatatom 434 442 5 0 0 2 B1_Dur - -, f 5;
+#X floatatom 486 443 5 0 0 2 Status - -, f 5;
+#X obj 405 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 547 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 691 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 629 443 5 0 0 2 Status - -, f 5;
+#X floatatom 760 442 5 0 0 2 Status - -, f 5;
+#X text 517 406 Terminal Tedium Switches;
+#X obj 123 174 r initbang;
+#X connect 0 0 29 0;
+#X connect 0 0 44 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
+#X connect 8 0 25 0;
+#X connect 8 0 45 0;
+#X connect 9 0 4 0;
+#X connect 9 0 46 0;
+#X connect 14 0 42 0;
+#X connect 14 1 43 0;
+#X connect 15 0 24 0;
+#X connect 15 1 47 0;
+#X connect 16 0 20 0;
+#X connect 16 1 48 0;
+#X connect 20 0 40 0;
+#X connect 24 0 37 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 1;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 29 0 31 0;
+#X connect 30 0 29 1;
+#X connect 31 0 32 0;
+#X connect 42 0 34 0;
+#X connect 43 0 35 0;
+#X connect 44 0 33 0;
+#X connect 45 0 36 0;
+#X connect 46 0 39 0;
+#X connect 47 0 38 0;
+#X connect 48 0 41 0;
+#X connect 50 0 32 0;
+#X connect 50 0 28 0;
+#X connect 50 0 7 0;
+#X coords 0 -1 1 1 400 60 2 400 400;

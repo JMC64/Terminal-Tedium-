@@ -1,0 +1,111 @@
+#N canvas 0 50 1744 754 10;
+#X obj 311 384 hsl 50 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4869 1;
+#X obj 269 337 hsl 50 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2238 1;
+#X obj 367 328 hsl 50 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 710 74 JMSwitchTD;
+#X obj 647 -17 JMGatesTD;
+#X obj 468 352 hsl 50 20 2 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 528 355 hsl 50 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 286 492 hsl 50 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 266 311 / 4000;
+#X obj 310 364 / 4000;
+#X obj 364 303 / 4000;
+#X obj 417 100 / 4000;
+#X obj 1103 141 s ButStat3;
+#X obj 552 209 r ButStat3;
+#X obj 523 304 spigot;
+#X obj 552 235 - 1;
+#X obj 552 256 abs;
+#X obj 465 303 spigot;
+#X obj 554 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 491 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 465 324 * 500;
+#X obj 217 409 MorphDetuneTerrarium;
+#X obj 214 501 dac~;
+#X obj 160 -32 JMGatesTD2;
+#X obj 466 267 / 4200;
+#X text 778 282 \; Needed externals : Terminal Tedium \, Cyclone \,
+iem_tab \; \; The banks are simply the concatenation of 64 one cycle
+\; wavforms from Adventure Kid (many thanks for his work) \; \; Most
+of the ideas were gathered elsewhere \, thank you to \; all people
+who release their work on the internet. \; \; \; \; Pitch can be quantized
+\; or unquantised depending on these outlets. \; \; Choose one of them
+\; \; Pot2 sends the detune amount between the Osc \; Pot3 send the
+mix of detunes Osc \; Pot4 sends the first table to be used ( 0->63)
+\; Pot5 sends the last table to be used ( 0->63) \; Don't worry about
+which one is maximum or min \, this is \; taken care of. \; \; Pot6
+sends the the amount of delay signal in the mix \; But 3 + Pot 6 Cahgne
+delay time \; \; BUTTON 3 changes banks (0->10) \; \; For morphing
+\, input a gate in GATE 1;
+#X obj 224 157 f;
+#X obj 264 158 + 1;
+#X obj 224 252 - 1;
+#X obj 224 273 abs;
+#X obj 176 301 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 143 323 spigot;
+#X obj 229 301 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 196 323 spigot;
+#X obj 258 275 loadbang;
+#X floatatom 224 178 5 0 0 0 - - -;
+#X floatatom 224 221 5 0 0 0 - - -;
+#X obj 224 200 mod 2;
+#X obj 214 480 *~ 0.8;
+#X connect 0 0 21 2;
+#X connect 1 0 21 1;
+#X connect 2 0 21 3;
+#X connect 3 0 21 8;
+#X connect 3 3 26 0;
+#X connect 3 8 12 0;
+#X connect 4 0 21 7;
+#X connect 5 0 21 5;
+#X connect 6 0 21 6;
+#X connect 7 0 38 1;
+#X connect 8 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 21 4;
+#X connect 13 0 15 0;
+#X connect 13 0 19 0;
+#X connect 14 0 6 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 17 0 20 0;
+#X connect 18 0 14 1;
+#X connect 19 0 17 1;
+#X connect 20 0 5 0;
+#X connect 21 0 38 0;
+#X connect 23 0 33 0;
+#X connect 23 1 31 0;
+#X connect 23 2 8 0;
+#X connect 23 3 9 0;
+#X connect 23 4 10 0;
+#X connect 23 5 11 0;
+#X connect 23 6 24 0;
+#X connect 24 0 14 0;
+#X connect 24 0 17 0;
+#X connect 26 0 27 0;
+#X connect 26 0 35 0;
+#X connect 26 0 37 0;
+#X connect 27 0 26 1;
+#X connect 28 0 29 0;
+#X connect 29 0 32 0;
+#X connect 30 0 31 1;
+#X connect 31 0 21 0;
+#X connect 32 0 33 1;
+#X connect 33 0 21 0;
+#X connect 34 0 32 0;
+#X connect 36 0 28 0;
+#X connect 36 0 30 0;
+#X connect 37 0 36 0;
+#X connect 38 0 22 0;
+#X connect 38 0 22 1;
