@@ -1,0 +1,55 @@
+This is an OSC client and a OSC server+client for Terminal Tedium.
+
+Originally, the TD OSC client was using the tinyOSC library and sending message I was not really able to use.
+
+As not everyone needs to send gates out of the TD, 2 softwares are provided, one is reading all inputs of the TD and the other one reading the inputs and sends the output gates.
+It is likely that the client-only version will consume a little less CPU of your RPI.
+
+These are adapted from different sources.The code was borrowed from
+ - Liblo OSC library examples
+ - Original Terminal Tedium OSC client
+
+ Thanks to all who propose their examples and snippets.
+
+ WARNING : This code has not been thoroughly tested and is definitely badly coded.It works but for sure it could be optimised.
+
+HOW TO USE :
+ By default , the client is sending to IP address : 127.0.0.1 (the local host) and uses the PORT 9000. Thus, you should set listening port in Pd, Csound, SC, to 9000.
+
+ The server is listening to PORT 7770.
+
+ If you want to changes these, you will need to edit the code
+
+
+
+
+ Client side : the messages sent are the following.
+
+ "/pot1", pot2,... , "/"pot6":  Send a float. Each pot is sending its value when changed. this is different from the original TD OSC client which is sending a bundle.
+ "/trigger1", "/trigger2",.."/trigger4" : send the received gates
+ "/button1".."/button3" : Send the status of the buttons (either 1 or 0). There is no check on the duration. This allows to combine pressing 1 , 2 or more buttons at the same time and to treat the messages differently.
+ This is different from TD OSC client which is sending the status of a button once it is released.
+
+
+
+ Messages received by the server:
+Same messages as above +
+ "/gate1" , "/gate2"  : You will need in your client ( SC, PD or Csound,...) to control the duration for opening the gate between 2 messages.
+The message MUST be an integer (0 - closes the gate or 1 - opens the gate).
+"/led" : Switches the button led On/off. Message must also be an integer (0,1).
+
+
+
+
+ INTALLATION :
+ You need the OSC library liblo and (wiringPI should be installed). In raspbian:
+
+ sudo apt-get install liblo liblo-dev
+
+ In order to build the 2 programs:
+
+ make all
+
+ And you should be good to go.
+ Enjoy !
+

@@ -1,0 +1,37 @@
+#N canvas 1006 577 878 421 12;
+#X floatatom 66 188 5 0 0 0 - - -;
+#X floatatom 116 189 5 0 0 0 - - -;
+#X obj 66 77 net/udpreceive 9000;
+#X floatatom 469 189 5 0 0 0 - - -;
+#X floatatom 418 190 5 0 0 0 - - -;
+#X floatatom 368 189 5 0 0 0 - - -;
+#X floatatom 317 190 5 0 0 0 - - -;
+#X floatatom 267 190 5 0 0 0 - - -;
+#X floatatom 217 189 5 0 0 0 - - -;
+#X floatatom 166 189 5 0 0 0 - - -;
+#X obj 66 110 osc/unpackOSC;
+#X obj 66 142 osc/routeOSC /pot1 /pot2 /pot3 /pot4 /pot5 /pot6 /button1
+/button2 /button3 /trigger1 /trigger2 /trigger3 /trigger4, f 94;
+#X obj 569 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 620 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 670 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 519 195 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 2 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 11 1 1 0;
+#X connect 11 2 9 0;
+#X connect 11 3 8 0;
+#X connect 11 4 7 0;
+#X connect 11 5 6 0;
+#X connect 11 6 5 0;
+#X connect 11 7 4 0;
+#X connect 11 8 3 0;
+#X connect 11 9 15 0;
+#X connect 11 10 12 0;
+#X connect 11 11 13 0;
+#X connect 11 12 14 0;
